@@ -1,6 +1,7 @@
 
 import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import ComplianceBanner from './components/ComplianceBanner';
 import { CurrencyProvider } from './contexts/CurrencyContext';
@@ -40,6 +41,7 @@ const App: React.FC = () => {
             </Routes>
           </Suspense>
         </Layout>
+        <Analytics />
       </Router>
     </CurrencyProvider>
   );
