@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout';
 import ComplianceBanner from './components/ComplianceBanner';
 import { CurrencyProvider } from './contexts/CurrencyContext';
+import './index.css';
 
 // Route-level code splitting
 const Auth = lazy(() => import('./pages/Auth'));
