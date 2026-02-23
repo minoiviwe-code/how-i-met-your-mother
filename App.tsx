@@ -22,27 +22,23 @@ const App: React.FC = () => {
     <CurrencyProvider>
       <Router>
         <ComplianceBanner />
-        <Routes>
-          <Route path="/auth" element={<Auth />} />
-          <Route path="*" element={
-            <Layout>
-              <Suspense fallback={<div className="h-screen flex items-center justify-center font-black uppercase tracking-widest opacity-20">Ubuntu...</div>}>
-                <Routes>
-                  <Route path="/" element={<Navigate to="/auth" replace />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/admin" element={<AdminDashboard />} />
-                  <Route path="/create-pool" element={<CreatePool />} />
-                  <Route path="/verify" element={<KycVerification />} />
-                  <Route path="/agreement/:poolId" element={<PoolAgreement />} />
-                  <Route path="/contribute/:id" element={<Contribute />} />
-                  <Route path="/pool/:id" element={<PoolDetails />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/prospectus" element={<Prospectus />} />
-                </Routes>
-              </Suspense>
-            </Layout>
-          } />
-        </Routes>
+        <Layout>
+          <Suspense fallback={<div className="h-screen flex items-center justify-center font-black uppercase tracking-widest opacity-20">Ubuntu...</div>}>
+            <Routes>
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/" element={<Navigate to="/auth" replace />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/create-pool" element={<CreatePool />} />
+              <Route path="/verify" element={<KycVerification />} />
+              <Route path="/agreement/:poolId" element={<PoolAgreement />} />
+              <Route path="/contribute/:id" element={<Contribute />} />
+              <Route path="/pool/:id" element={<PoolDetails />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/prospectus" element={<Prospectus />} />
+            </Routes>
+          </Suspense>
+        </Layout>
       </Router>
     </CurrencyProvider>
   );
